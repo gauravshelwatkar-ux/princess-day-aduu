@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#ffe4ef"><title>For Aduu 💗</title>
+<style>
+*{box-sizing:border-box}body{margin:0;min-height:100vh;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:#713b59;background:radial-gradient(circle at 15% 15%,#fff 0 5%,transparent 28%),linear-gradient(145deg,#fff0f6,#fce1ef 48%,#f7e8ff);overflow-x:hidden}
+#floaters{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}.float{position:absolute;bottom:-50px;animation:rise linear forwards;opacity:.8}@keyframes rise{to{transform:translateY(-115vh) rotate(360deg);opacity:0}}
+main{position:relative;z-index:1;min-height:100vh;display:grid;place-items:center;padding:26px 16px}.card{width:min(560px,100%);text-align:center;padding:34px 25px;border:1px solid #ffffffc9;border-radius:30px;background:#ffffffb8;backdrop-filter:blur(12px);box-shadow:0 18px 55px #c778a52b;animation:pop .8s ease both}@keyframes pop{from{opacity:0;transform:translateY(20px) scale(.97)}to{opacity:1;transform:none}}
+.crown{font-size:48px;filter:drop-shadow(0 5px 8px #e8a4c5)}.eyebrow{letter-spacing:3px;text-transform:uppercase;font-size:11px;color:#b36b91;font-weight:800}h1{font-family:Georgia,serif;font-size:clamp(36px,9vw,54px);line-height:1.05;margin:12px 0;color:#a74778}p{line-height:1.75;font-size:16px}.lead{font-size:18px}.btn{border:0;border-radius:999px;padding:14px 23px;margin:9px 5px;background:linear-gradient(100deg,#ec8eb7,#c78be9);color:white;font-weight:750;font-size:15px;box-shadow:0 8px 18px #d68bb94a;cursor:pointer}.btn.alt{background:#fff;color:#a74778;border:1px solid #f1c7dc}.btn:active{transform:scale(.97)}.hidden{display:none}.note{font-size:13px;color:#a16c87}.compliment{background:#fff9fc;border:1px solid #f7d5e5;border-radius:18px;padding:16px;margin:12px 0;font-size:17px;animation:pop .35s ease}.signature{font-family:Georgia,serif;font-style:italic;font-size:20px;color:#a74778;margin-top:24px}
+</style></head>
+<body><div id="floaters"></div><main>
+<section class="card" id="welcome"><div class="crown">👑</div><div class="eyebrow">A tiny surprise made with lots of affection</div><h1>Hey, बाळा! 💗</h1><p class="lead">Aduu, आजचा दिवस थोडा extra special आहे… कारण आजच्या दिवसाची queen तू आहेस! ✨</p><p>Ready for a little dose of smiles, sweetness &amp; compliments? 🌷</p><button class="btn" onclick="openSurprise()">Open your surprise 💌</button><div class="note">P.S. Made especially for my favourite human.</div></section>
+<section class="card hidden" id="surprise"><div class="crown">🌸👑🌸</div><div class="eyebrow">Princess Day • 18 November</div><h1>For my Aduu ✨</h1><p class="lead">बाळा, तू फक्त cute नाहीस… तू genuinely एक सुंदर मनाची व्यक्ती आहेस. 💕</p>
+<div class="compliment">🌷 तुझं हसणं म्हणजे अगदी cloudy day मधला sunshine!</div>
+<div class="compliment">🦋 तू जशी आहेस ना, तशीच खूप special आहेस. Never let the world dim your sparkle!</div>
+<div class="compliment">💫 तुझ्यातली kindness, तुझा वेडेपणा आणि तुझी positive vibe — all are precious!</div>
+<div class="compliment">👑 Queen असण्यासाठी crown लागत नाही… तुझा confidence आणि तुझं सुंदर मन पुरेसं आहे!</div>
+<div class="compliment">🧸 माझ्या आयुष्यातली तू एक अशी friend आहेस जिच्यामुळे साधे moments सुद्धा memorable होतात.</div>
+<button class="btn" onclick="moreLove()">One more compliment? 💗</button><button class="btn alt" onclick="showNote()">A little thought for you 💌</button>
+<div id="extra"></div><div id="thought" class="hidden"><p class="compliment">कधी स्वतःवर doubt आला ना, तर एक गोष्ट लक्षात ठेव — तू enough आहेस, तू important आहेस, आणि तुझं असणंच अनेक moments सुंदर बनवतं. Keep smiling, keep shining, बाळा! 🌈💖</p></div>
+<div class="signature">With lots of best-friend love,<br>— Your forever दोस्त 💗</div>
+</section></main>
+<script>
+const pool=['💗','💕','✨','🌸','🦋','⭐','💖','🌷'];function floatOne(){const el=document.createElement('span');el.className='float';el.textContent=pool[Math.floor(Math.random()*pool.length)];el.style.left=Math.random()*100+'vw';el.style.fontSize=(16+Math.random()*22)+'px';el.style.animationDuration=(5+Math.random()*5)+'s';document.getElementById('floaters').appendChild(el);setTimeout(()=>el.remove(),10500)}setInterval(floatOne,420);
+function burst(){for(let i=0;i<22;i++)setTimeout(floatOne,i*35)}
+function openSurprise(){document.getElementById('welcome').classList.add('hidden');document.getElementById('surprise').classList.remove('hidden');burst()}
+let n=0;const extra=['तुझ्यासारखी friend मिळणं म्हणजे life कडून मिळालेली cute little blessing! 🥹','तुझ्या छोट्या छोट्या गोष्टीसुद्धा तुझी personality सुंदर बनवतात. Stay original, Aduu! 🌼','You make friendship feel lighter, happier and full of laughter. खूप खूप shine कर! ✨'];function moreLove(){document.getElementById('extra').innerHTML='<div class="compliment">'+extra[n%extra.length]+'</div>';n++;burst()}
+function showNote(){document.getElementById('thought').classList.toggle('hidden');burst()}
+</script></body></html>
